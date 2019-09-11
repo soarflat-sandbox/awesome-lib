@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+
+    // 相対パスではないモジュールは node_modules 配下を検索する
+    "moduleResolution": "node",
+
+    // 型定義ファイル（`.d.ts`）を生成する
+    "declaration": true, // 大事
+
+    // 対応する型定義ファイル（`.d.ts`）毎にソースマップ生成する
+    "declarationMap": true,
+
+    // 対応するソースマップ（`.map`）を生成する
+    "sourceMap": true,
+
+    // ビルドに含まれるライブラリ
+    "lib": ["dom", "ES2017"],
+
+    // 厳格な型チェックオプション（noImplicitAny、noImplicitThis、alwaysStrict、
+    // strictBindCallApply、strictNullChecks、strictFunctionTypes、
+    // strictPropertyInitialization）を有効化する
+    "strict": true,
+
+    // 未使用のlocal変数があるとエラーを報告する
+    "noUnusedLocals": true,
+
+    // 未使用のパラメータ(引数)があるとエラーを報告する
+    "noUnusedParameters": true,
+
+    // 正確に値を返さないえ関数があるとエラーを報告する
+    // 以下は暗黙的に undefined を返すことがあるためエラーになる
+    // function f(x: number) {
+    //   if (x < 0) return 42;
+    // }
+    "noImplicitReturns": true,
+
+    // swith文でフォールスルーケース（breakしてないケース）のエラーを報告する
+    // 例: 以下はbreakがないのでエラーになる
+    // switch (num){
+    //   case 1:
+    //       console.log(1);
+    //   case 2:
+    //       console.log(2);
+    //       break;
+    // }
+    "noFallthroughCasesInSwitch": true,
+
+    // ES modules 形式以外の、CommonJS 形式などのモジュールを default import 形式で読み込める
+    // 例）const module = require('module') -> import module from 'module'
+    "esModuleInterop": true,
+
+    // 実験的な機能である「ES7 decorators」のサポートを有効にする
+    // https://github.com/tc39/proposal-decorators
+    "experimentalDecorators": true,
+
+    // 実験的な機能である「emitting type metadata for decorators」を有効にする
+    // これを利用することで、TypeScriptの型を実行時に取得できる
+    "emitDecoratorMetadata": true
+  },
+  "include": ["src/**/*"]
+}

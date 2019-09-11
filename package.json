@@ -1,0 +1,32 @@
+{
+  "name": "awesome-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist-cjs/index.js",
+  "module": "dist-esm/index.js",
+  "types": "dist-cjs/index.d.ts",
+  "scripts": {
+    "build": "npm-run-all -s build:cjs build:esm",
+    "build:cjs": "tsc --project . --module commonjs --outDir ./dist-cjs",
+    "build:esm": "tsc --project . --module es2015 --outDir ./dist-esm",
+    "lint": "eslint --ext .ts ./src",
+    "fix": "eslint --fix --ext .ts ./src",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.9.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.6.3"
+  }
+}
